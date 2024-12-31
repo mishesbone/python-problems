@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+A Python program that assigns "a" or "an" to a word entered by the user appropriately,
+and prints the result to the standard output.
+
+Created on Sun Jan 29 10:36:59 2023
+Updated on Dec 31, 2024
+
+@author: RoboTeknologies Agent Mishes
+"""
+
+# Create a list of vowels for reference
+vowels = ["a", "e", "i", "o", "u"]
+
+# Request input from the user
+text = input("Enter a word:\n").strip()
+
+# Check if the input is valid (non-empty and alphabetic)
+if not text.isalpha():
+    print("Error: Please enter a valid word consisting of only letters.")
+else:
+    # Check if the input is non-empty
+    if text:
+        # Convert the first letter to lowercase to handle case insensitivity
+        first_letter = text[0].lower()
+
+        # Assign 'a' or 'an' based on the first letter
+        if first_letter in vowels:
+            print(f"an {text}")
+        else:
+            print(f"a {text}")
+    else:
+        print("Error: Input cannot be empty.")
